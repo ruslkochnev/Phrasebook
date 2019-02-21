@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Разговорник \"Русско-Английский\"</string>
+    <string name="trip">Путешествия</string>
+    <string name="transport">Транспорт</string>
+    <string name="hotel">Отель</string>
+    <string name="cafe">Кафе</string>
+    <string name="excursion">Экскурсии</string>
+    <string name="buy">Покупки</string>
+    <string name="radio">Радио</string>
+    <string name="bank">Банк</string>
+    <string name="health">Здоровье</string>
+    <string name="common">Другие</string>
+    <string name="search_hint">Поиск</string>
+    <string name="about_hint">О приложении</string>
+</resources>

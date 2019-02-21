@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="margin16dp">16dp</dimen>
+    <dimen name="margin4dp">4dp</dimen>
+    <dimen name="textSize18sp">18sp</dimen>
+    <dimen name="leaderboardBannerHeight">90dp</dimen>
+    <dimen name="buttonHeight_sw600dp">70dp</dimen>
+    <dimen name="buttonHeight_sw720dp">90dp</dimen>
+    <dimen name="buttonHeight_normal">50dp</dimen>
+    <dimen name="margin8dp">8dp</dimen>
+
+    //остальные
+
+</resources>
