@@ -8,6 +8,7 @@
     <dimen name="buttonHeight_sw720dp">90dp</dimen>
     <dimen name="buttonHeight_normal">50dp</dimen>
     <dimen name="margin8dp">8dp</dimen>
+    <dimen name="margin32dp">32dp</dimen>
 
     //остальные
 
