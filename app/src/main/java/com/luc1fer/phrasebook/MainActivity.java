@@ -31,63 +31,105 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
+        /*AdRequest adRequest = new AdRequest.Builder().build();*/
         mAdView.loadAd(adRequest);
+        Button buttonTrip = findViewById(R.id.buttonTrip);
+        Button buttonTransport = findViewById(R.id.buttonTransport);
+        Button buttonHotel = findViewById(R.id.buttonHotel);
+        Button buttonCafe = findViewById(R.id.buttonCafe);
+        Button buttonExcursion = findViewById(R.id.buttonExcursion);
+        Button buttonBuy = findViewById(R.id.buttonBuy);
+        Button buttonRadio = findViewById(R.id.buttonRadio);
+        Button buttonBank = findViewById(R.id.buttonBank);
+        Button buttonHealth = findViewById(R.id.buttonHealth);
+        Button buttonCommon = findViewById(R.id.buttonCommon);
 
-        Button button = findViewById(R.id.buttonTrip);
 
 
     }
 
-    public void onTripButtonClick(View view) {
+  /*  public void onTripButtonClick(View view) {
         Intent intent = new Intent(MainActivity.this, inflate.class);
         intent.putExtra("i", 2);
         intent.putExtra("j", 95);
         intent.putExtra("title", "Путешествия");
         startActivity(intent);
     }
+*/
 
-/*
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonTrip:
                 Intent intentTrip = new Intent(MainActivity.this, inflate.class);
+                intentTrip.putExtra("i", 2);
+                intentTrip.putExtra("j", 95);
+                intentTrip.putExtra("title", getString(R.string.trip));
                 startActivity(intentTrip);
                 break;
             case R.id.buttonTransport:
                 Intent intentTransport = new Intent(MainActivity.this, inflate.class);
+                intentTransport.putExtra("i", 97);
+                intentTransport.putExtra("j", 215);
+                intentTransport.putExtra("title", getString(R.string.transport));
                 startActivity(intentTransport);
                 break;
             case R.id.buttonHotel:
                 Intent intentHotel = new Intent(MainActivity.this, inflate.class);
+                intentHotel.putExtra("i", 217);
+                intentHotel.putExtra("j", 324);
+                intentHotel.putExtra("title", getString(R.string.hotel));
                 startActivity(intentHotel);
                 break;
             case R.id.buttonCafe:
                 Intent intentCafe = new Intent(MainActivity.this, inflate.class);
+                intentCafe.putExtra("i", 326);
+                intentCafe.putExtra("j", 417);
+                intentCafe.putExtra("title", getString(R.string.cafe));
                 startActivity(intentCafe);
                 break;
             case R.id.buttonExcursion:
                 Intent intentExcursion = new Intent(MainActivity.this, inflate.class);
+                intentExcursion.putExtra("i", 419);
+                intentExcursion.putExtra("j", 502);
+                intentExcursion.putExtra("title", getString(R.string.excursion));
                 startActivity(intentExcursion);
                 break;
             case R.id.buttonBuy:
                 Intent intentBuy = new Intent(MainActivity.this, inflate.class);
+                intentBuy.putExtra("i", 504);
+                intentBuy.putExtra("j", 627);
+                intentBuy.putExtra("title", getString(R.string.buy));
                 startActivity(intentBuy);
                 break;
             case R.id.buttonRadio:
                 Intent intentRadio = new Intent(MainActivity.this, inflate.class);
+                intentRadio.putExtra("i", 629);
+                intentRadio.putExtra("j", 679);
+                intentRadio.putExtra("title", getString(R.string.radio));
                 startActivity(intentRadio);
                 break;
             case R.id.buttonBank:
                 Intent intentBank = new Intent(MainActivity.this, inflate.class);
+                intentBank.putExtra("i", 681);
+                intentBank.putExtra("j", 707);
+                intentBank.putExtra("title", getString(R.string.bank));
                 startActivity(intentBank);
                 break;
             case R.id.buttonHealth:
                 Intent intentHealth = new Intent(MainActivity.this, inflate.class);
+                intentHealth.putExtra("i", 709);
+                intentHealth.putExtra("j", 780);
+                intentHealth.putExtra("title", getString(R.string.health));
                 startActivity(intentHealth);
                 break;
             case R.id.buttonCommon:
                 Intent intentCommon = new Intent(MainActivity.this, inflate.class);
+                intentCommon.putExtra("i", 782);
+                intentCommon.putExtra("j", 953);
+                intentCommon.putExtra("title", getString(R.string.common));
                 startActivity(intentCommon);
-                break;*/
+                break;
+        }
+    }
 }

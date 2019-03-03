@@ -47,6 +47,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/trip"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -57,6 +58,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/transport"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -67,6 +69,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/hotel"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -77,6 +80,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/cafe"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -87,6 +91,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/excursion"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -97,6 +102,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/buy"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -107,6 +113,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/radio"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -117,6 +124,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/bank"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -127,6 +135,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/health"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />
@@ -137,6 +146,7 @@
                 android:layout_height="@dimen/buttonHeight_sw600dp"
                 android:layout_marginBottom="@dimen/margin4dp"
                 android:background="@color/colorPurple700"
+                android:onClick="onClick"
                 android:text="@string/common"
                 android:textSize="@dimen/textSize18sp"
                 android:textStyle="bold" />

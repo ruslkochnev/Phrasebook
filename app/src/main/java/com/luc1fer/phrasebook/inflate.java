@@ -30,6 +30,8 @@ public class inflate extends AppCompatActivity {
         i = getIntent().getExtras().getInt("i");
         j = getIntent().getExtras().getInt("j");
         title = getIntent().getExtras().getString("title");
+
+
         mDBhelper = new PhraseDBHelper(this);
         try {
             mDBhelper.updateDataBase();

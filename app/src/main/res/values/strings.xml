@@ -12,4 +12,5 @@
     <string name="common">Другие</string>
     <string name="search_hint">Поиск</string>
     <string name="about_hint">О приложении</string>
+    <string name="onClick">onClick</string>
 </resources>
