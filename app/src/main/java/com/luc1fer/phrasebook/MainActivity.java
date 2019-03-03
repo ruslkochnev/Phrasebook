@@ -51,43 +51,43 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.buttonTrip:
-                Intent intentTrip = new Intent(mainBook.this, trip.class);
+                Intent intentTrip = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentTrip);
                 break;
-            case R.id.buttonTrans:
-                Intent intentTrans = new Intent(mainBook.this, trans.class);
-                startActivity(intentTrans);
+            case R.id.buttonTransport:
+                Intent intentTransport = new Intent(MainActivity.this, inflate.class);
+                startActivity(intentTransport);
                 break;
             case R.id.buttonHotel:
-                Intent intentHotel = new Intent(mainBook.this, hotel.class);
+                Intent intentHotel = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentHotel);
                 break;
             case R.id.buttonCafe:
-                Intent intentCafe = new Intent(mainBook.this, cafe.class);
+                Intent intentCafe = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentCafe);
                 break;
-            case R.id.buttonExc:
-                Intent intentExcursion = new Intent(mainBook.this, excursion.class);
+            case R.id.buttonExcursion:
+                Intent intentExcursion = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentExcursion);
                 break;
             case R.id.buttonBuy:
-                Intent intentBuy = new Intent(mainBook.this, buy.class);
+                Intent intentBuy = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentBuy);
                 break;
             case R.id.buttonRadio:
-                Intent intentRadio = new Intent(mainBook.this, radio.class);
+                Intent intentRadio = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentRadio);
                 break;
             case R.id.buttonBank:
-                Intent intentBank = new Intent(mainBook.this, bank.class);
+                Intent intentBank = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentBank);
                 break;
             case R.id.buttonHealth:
-                Intent intentHealth = new Intent(mainBook.this, health.class);
+                Intent intentHealth = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentHealth);
                 break;
             case R.id.buttonCommon:
-                Intent intentCommon = new Intent(mainBook.this, common.class);
+                Intent intentCommon = new Intent(MainActivity.this, inflate.class);
                 startActivity(intentCommon);
                 break;*/
 }
