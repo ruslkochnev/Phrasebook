@@ -13,6 +13,9 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,6 +25,7 @@ public class inflate extends AppCompatActivity {
     int i;
     int j;
     String title;
+    private AdView mAdView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -30,6 +34,11 @@ public class inflate extends AppCompatActivity {
         i = getIntent().getExtras().getInt("i");
         j = getIntent().getExtras().getInt("j");
         title = getIntent().getExtras().getString("title");
+
+        mAdView = findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
+
+        mAdView.loadAd(adRequest);
 
 
         mDBhelper = new PhraseDBHelper(this);

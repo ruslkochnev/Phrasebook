@@ -1,14 +1,17 @@
 package com.luc1fer.phrasebook;
 
 import android.content.Intent;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
-import android.view.View;
-import android.widget.Button;
+import android.view.MenuItem;
 
-import com.luc1fer.phrasebook.PhraseDBHelper;
+import android.view.View;
+
+
+
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -20,6 +23,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu, menu);
+
         return true;
     }
 
@@ -32,31 +36,14 @@ public class MainActivity extends AppCompatActivity {
 
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
-        /*AdRequest adRequest = new AdRequest.Builder().build();*/
+
         mAdView.loadAd(adRequest);
-        Button buttonTrip = findViewById(R.id.buttonTrip);
-        Button buttonTransport = findViewById(R.id.buttonTransport);
-        Button buttonHotel = findViewById(R.id.buttonHotel);
-        Button buttonCafe = findViewById(R.id.buttonCafe);
-        Button buttonExcursion = findViewById(R.id.buttonExcursion);
-        Button buttonBuy = findViewById(R.id.buttonBuy);
-        Button buttonRadio = findViewById(R.id.buttonRadio);
-        Button buttonBank = findViewById(R.id.buttonBank);
-        Button buttonHealth = findViewById(R.id.buttonHealth);
-        Button buttonCommon = findViewById(R.id.buttonCommon);
+
 
 
 
     }
 
-  /*  public void onTripButtonClick(View view) {
-        Intent intent = new Intent(MainActivity.this, inflate.class);
-        intent.putExtra("i", 2);
-        intent.putExtra("j", 95);
-        intent.putExtra("title", "Путешествия");
-        startActivity(intent);
-    }
-*/
 
     public void onClick(View v) {
         switch (v.getId()) {
@@ -130,6 +117,21 @@ public class MainActivity extends AppCompatActivity {
                 intentCommon.putExtra("title", getString(R.string.common));
                 startActivity(intentCommon);
                 break;
+
         }
     }
+
+    public void onClickSearchMenuButton(MenuItem item) {
+        Intent intentSearch = new Intent(MainActivity.this, search.class);
+        intentSearch.putExtra("title", getString(R.string.search_bar));
+        startActivity(intentSearch);
+    }
+
+    public void onClickMenuButton(MenuItem item) {
+        Intent intentAbout = new Intent(MainActivity.this, about.class);
+        intentAbout.putExtra("title", getString(R.string.about_hint));
+        startActivity(intentAbout);
+    }
+
+
 }

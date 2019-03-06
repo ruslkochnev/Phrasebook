@@ -22,6 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".inflate"/>
+        <activity android:name=".search" />
+        <activity android:name=".about" />
+
 
     </application>
 

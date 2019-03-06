@@ -10,7 +10,11 @@
     <string name="bank">Банк</string>
     <string name="health">Здоровье</string>
     <string name="common">Другие</string>
-    <string name="search_hint">Поиск</string>
+    <string name="search_hint">Введите фразу или часть фразы на русском или английском языке</string>
+    <string name="search_bar">Поиск в словаре</string>
     <string name="about_hint">О приложении</string>
     <string name="onClick">onClick</string>
+    <string name="link">Ссылка в ВК</string>
+    <string name="author">author</string>
+    <string name="gmail">gmail</string>
 </resources>

@@ -1,15 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/colorWhite"
     >
 
-
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbar3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/colorPurple700"
@@ -18,11 +16,27 @@
         app:title="@string/app_name"
         app:titleTextColor="@color/colorWhite" />
 
-    <LinearLayout
+    <EditText
+        android:id="@+id/userFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/toolbar3"
+        android:layout_marginStart="@dimen/margin16dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        android:layout_marginEnd="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin8dp"
+        android:ems="10"
+        android:hint="@string/search_hint"
+        android:importantForAutofill="no"
+        android:inputType="textPersonName|text"
+        android:textColor="@color/colorAccent"
+        android:textColorHint="@color/colorGray700" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_above="@+id/adLayout"
-        android:layout_below="@+id/toolbar2"
+        android:layout_below="@+id/userFilter"
         android:layout_marginStart="@dimen/margin16dp"
         android:layout_marginTop="@dimen/margin8dp"
         android:layout_marginEnd="@dimen/margin8dp"
@@ -30,10 +44,9 @@
         android:orientation="vertical">
 
         <ListView
-            android:id="@+id/listViewItem"
+            android:id="@+id/userList"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp" />
+            android:layout_height="match_parent" />
 
     </LinearLayout>
 
@@ -42,7 +55,6 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/leaderboardBannerHeight"
         android:layout_alignParentBottom="true"
-        android:background="@null"
         android:orientation="vertical">
 
         <com.google.android.gms.ads.AdView
