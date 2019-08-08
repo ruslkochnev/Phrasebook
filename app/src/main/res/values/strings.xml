@@ -17,4 +17,8 @@
     <string name="link">Ссылка в ВК</string>
     <string name="author">author</string>
     <string name="gmail">gmail</string>
+    <string name="AdID">ca-app-pub-6978053805119593/3320737721</string>
+    <string name="toggle">ToggleButton</string>
+    <string name="txt_ads_is_already_disabled">Already disabled</string>
+    <string name="msg_notification_Title">123</string>
 </resources>

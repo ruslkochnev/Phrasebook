@@ -195,6 +195,6 @@
             android:layout_centerInParent="true"
             android:background="@null"
             app:adSize="LEADERBOARD"
-            app:adUnitId="ca-app-pub-6978053805119593/7321619267" />
+            app:adUnitId="@string/AdID" />
     </RelativeLayout>
 </RelativeLayout>

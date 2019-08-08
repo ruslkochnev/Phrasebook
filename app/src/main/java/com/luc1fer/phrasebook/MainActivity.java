@@ -1,7 +1,9 @@
 package com.luc1fer.phrasebook;
 
+import android.Manifest;
 import android.content.Intent;
 
+import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -18,6 +20,9 @@ import com.google.android.gms.ads.AdView;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
+
     private AdView mAdView;
 
     @Override
@@ -34,14 +39,24 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        mAdView = findViewById(R.id.adView);
+       /* mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
 
         mAdView.loadAd(adRequest);
+*/
 
-
-
-
+            // получаем наши `SharedPreferences`
+            PreferencesManager prefManager = new PreferencesManager(this);
+            // проверяем нашу запись в файле настроек. Если реклама не отключена, то
+            // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
+            // а также проверяем подключение к сети Internet простеньким способом
+            // true - enabled  | false - disabled
+            boolean adsState = prefManager.getAdsStatus();
+            if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
+                Ads.showBanner(this, adsState);
+            } else {
+                Ads.showBanner(this, adsState);
+            }
     }
 
 

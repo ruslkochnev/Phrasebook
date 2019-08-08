@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.luc1fer.phrasebook">
-
+<uses-permission android:name="com.android.vending.BILLING" />
     <application
+
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -11,7 +12,7 @@
         android:theme="@style/AppTheme.Fullscreen">
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-6978053805119593~6152718268"
+            android:value="ca-app-pub-6978053805119593~2773942818"
             />
 
         <activity android:name=".MainActivity">

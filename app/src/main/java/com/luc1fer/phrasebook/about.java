@@ -27,13 +27,13 @@ public class about extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
-
+/*
         mAdView = findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
 
         mAdView.loadAd(adRequest);
 
-
+*/
 
     }
     public void onImageButtonClick(View view) {

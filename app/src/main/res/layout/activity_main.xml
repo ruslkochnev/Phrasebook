@@ -7,168 +7,179 @@
     android:background="@color/colorWhite"
     tools:context=".MainActivity">
 
+
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
+        android:layout_marginBottom="0dp"
         android:background="@color/colorPurple700"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="@string/app_name"
         app:titleTextColor="@color/colorWhite" />
 
-    <RelativeLayout
-        android:id="@+id/rel"
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="false"
-        android:layout_centerInParent="true"
-        android:layout_marginLeft="@dimen/margin16dp"
-        android:layout_marginRight="@dimen/margin16dp"
+        android:layout_below="@id/toolbar"
         android:background="@null"
-        android:orientation="vertical">
+        app:adSize="SMART_BANNER"
+        app:adUnitId="@string/AdID" />
 
-        <LinearLayout
-            android:id="@+id/buttonContainer"
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.luc1fer.phrasebook.SettingsFrag"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="@dimen/margin8dp" />
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
+        android:layout_width="match_parent"
+        android:layout_height="559dp"
+        android:layout_below="@id/adView">
+
+        <RelativeLayout
+            android:id="@+id/rel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:layout_marginStart="@dimen/margin16dp"
-            android:layout_marginTop="@dimen/margin16dp"
-            android:layout_marginEnd="@dimen/margin16dp"
-            android:layout_marginBottom="@dimen/margin16dp"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/margin16dp"
+            android:layout_marginRight="@dimen/margin16dp"
             android:background="@null"
             android:orientation="vertical">
 
-            <Button
-                android:id="@+id/buttonTrip"
+            <LinearLayout
+                android:id="@+id/buttonContainer"
                 android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/trip"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="@dimen/margin8dp"
+                android:layout_marginTop="@dimen/margin8dp"
+                android:layout_marginEnd="@dimen/margin8dp"
+                android:layout_marginBottom="@dimen/margin8dp"
+                android:background="@null"
+                android:orientation="vertical">
 
-            <Button
-                android:id="@+id/buttonTransport"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/transport"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonTrip"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/trip"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonHotel"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/hotel"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonTransport"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/transport"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonCafe"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/cafe"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonHotel"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/hotel"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonExcursion"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/excursion"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonCafe"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/cafe"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonBuy"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/buy"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonExcursion"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/excursion"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonRadio"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/radio"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonBuy"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/buy"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonBank"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/bank"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonRadio"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/radio"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonHealth"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/health"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
+                <Button
+                    android:id="@+id/buttonBank"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/bank"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-            <Button
-                android:id="@+id/buttonCommon"
-                android:layout_width="match_parent"
-                android:layout_height="@dimen/buttonHeight_normal"
-                android:layout_marginBottom="@dimen/margin4dp"
-                android:background="@color/colorPurple700"
-                android:onClick="@string/onClick"
-                android:text="@string/common"
-                android:textSize="@dimen/textSize18sp"
-                android:textStyle="bold" />
-        </LinearLayout>
+                <Button
+                    android:id="@+id/buttonHealth"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/health"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
 
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/buttonCommon"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_normal"
+                    android:layout_marginBottom="@dimen/margin4dp"
+                    android:background="@color/colorPurple700"
+                    android:onClick="@string/onClick"
+                    android:text="@string/common"
+                    android:textSize="@dimen/textSize18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/adLayout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/leaderboardBannerHeight"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        </RelativeLayout>
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            app:adSize="BANNER"
-            app:adUnitId="ca-app-pub-6978053805119593/7321619267" />
 
-    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>
