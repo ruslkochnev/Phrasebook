@@ -4,14 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <item
-        android:id="@+id/action_search"
         android:icon="@android:drawable/ic_menu_search"
         android:title="@string/search_hint"
         android:visible="true"
         android:onClick="onClickSearchMenuButton"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_about"
         android:icon="@android:drawable/ic_menu_info_details"
         android:orderInCategory="2"
         android:onClick="onClickMenuButton"

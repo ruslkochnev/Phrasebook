@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ImageView;
 
 public class about extends AppCompatActivity {
     String title;
@@ -14,12 +15,13 @@ public class about extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
         title = getIntent().getExtras().getString("title");
-        Toolbar toolbar4 = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar4);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        ImageView adTitle = findViewById(R.id.imageView3);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar4.setTitle(title);
-        toolbar4.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setTitle(title);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent3 = new Intent(about.this, MainActivity.class);
@@ -38,6 +40,8 @@ public class about extends AppCompatActivity {
             Ads.showBanner(this, false);
 
         }
+        if (!adsState)
+            adTitle.setVisibility(View.INVISIBLE);
 
     }
     public void onImageButtonClick(View view) {

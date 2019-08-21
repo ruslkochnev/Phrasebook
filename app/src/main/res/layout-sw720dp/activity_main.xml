@@ -19,7 +19,6 @@
         app:titleTextColor="@color/colorWhite" />
 
     <RelativeLayout
-        android:id="@+id/parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
@@ -37,7 +36,6 @@
             android:layout_marginBottom="@dimen/margin8dp">
 
             <RelativeLayout
-                android:id="@+id/rel"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_centerHorizontal="true"

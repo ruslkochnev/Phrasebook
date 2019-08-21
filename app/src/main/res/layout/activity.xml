@@ -3,47 +3,60 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/colorWhite"
-    >
+    android:orientation="vertical">
 
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar2"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPurple700"
+        android:background="@drawable/gradient"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="@string/app_name"
         app:titleTextColor="@color/colorWhite" />
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/adLayout"
-        android:layout_below="@+id/toolbar2"
-        android:layout_marginStart="@dimen/margin16dp"
+        android:layout_above="@id/container"
+        android:layout_below="@id/toolbar"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/margin8dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        android:layout_marginEnd="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin8dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/listViewItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp" />
+
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin8dp"
         android:layout_marginTop="@dimen/margin8dp"
         android:layout_marginEnd="@dimen/margin8dp"
         android:layout_marginBottom="@dimen/margin8dp"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/listViewItem"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="8dp" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/adLayout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/leaderboardBannerHeight"
-        android:layout_alignParentBottom="true"
-        android:background="@null"
-        android:orientation="vertical">
+        android:background="@null">
 
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
@@ -52,7 +65,8 @@
             android:background="@null"
             app:adSize="BANNER"
             app:adUnitId="@string/AdID" />
-
-    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>
+
+

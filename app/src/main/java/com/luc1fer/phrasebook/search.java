@@ -119,12 +119,12 @@ public class search extends AppCompatActivity {
         catch (SQLException ex){}
 
 
-        Toolbar toolbar3 = findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar3);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar3.setTitle(title);
-        toolbar3.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setTitle(title);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(search.this, MainActivity.class);

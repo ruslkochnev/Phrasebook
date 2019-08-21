@@ -15,6 +15,7 @@ import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 
 import com.anjlab.android.iab.v3.BillingProcessor;
@@ -28,7 +29,7 @@ public class SettingsFrag extends Fragment implements BillingProcessor.IBillingH
 
     private PreferencesManager prefManager; // класс, который работает с SharedPreferences. Я для себя решил вынести всю логику отдельно
     private Resources resources;            // для работы с ресурсами. Раз получаем и постоянно обращаемся
-    private Switch tbAdsState;        // кнопка
+    private ToggleButton tbAdsState;        // кнопка
 
     Context mContext;
     @Override

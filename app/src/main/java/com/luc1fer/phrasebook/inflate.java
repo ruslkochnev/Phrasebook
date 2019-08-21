@@ -13,7 +13,6 @@ import android.view.View;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
@@ -78,12 +77,12 @@ public class inflate extends AppCompatActivity {
         ListView listView = findViewById(R.id.listViewItem);
         listView.setAdapter(adapter);
 
-        Toolbar toolbar2 = findViewById(R.id.toolbar2);
-        setSupportActionBar(toolbar2);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        toolbar2.setTitle(title);
-        toolbar2.setNavigationOnClickListener(new View.OnClickListener() {
+        toolbar.setTitle(title);
+        toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(inflate.this, MainActivity.class);

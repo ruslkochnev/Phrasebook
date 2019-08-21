@@ -45,7 +45,6 @@
 
 
         <LinearLayout
-            android:id="@+id/linear"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="@dimen/margin16dp"
@@ -71,8 +70,9 @@
         android:layout_marginStart="@dimen/margin8dp"
         android:layout_marginTop="@dimen/margin8dp"
         android:layout_marginEnd="@dimen/margin8dp"
-        android:layout_marginBottom="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin16dp"
         android:background="@null">
+
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"

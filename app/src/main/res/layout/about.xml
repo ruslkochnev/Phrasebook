@@ -19,7 +19,6 @@
         app:titleTextColor="@color/colorWhite" />
 
     <RelativeLayout
-        android:id="@+id/parent"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/toolbar">
@@ -37,10 +36,8 @@
             android:layout_marginBottom="@dimen/margin8dp">
 
             <RelativeLayout
-                android:id="@+id/rel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_above="@id/adLayout"
                 android:layout_gravity="center"
                 android:layout_marginStart="@dimen/margin8dp"
                 android:layout_marginTop="@dimen/margin8dp"
@@ -85,7 +82,6 @@
                     android:orientation="horizontal">
 
                     <Button
-                        android:id="@+id/btnGmail"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,7 +92,6 @@
                         android:textStyle="bold" />
 
                     <Button
-                        android:id="@+id/btnVk"
                         style="?android:attr/buttonBarButtonStyle"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
