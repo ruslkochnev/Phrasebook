@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorWhite"
     tools:context=".MainActivity">
 
     <android.support.v7.widget.Toolbar
@@ -12,189 +11,214 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:background="@color/colorPurple700"
+        android:background="@drawable/gradient"
         android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
+        android:theme="?attr/actionBarStyle"
         app:title="@string/app_name"
         app:titleTextColor="@color/colorWhite" />
 
     <RelativeLayout
-        android:id="@+id/rel"
+        android:id="@+id/parent"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/adLayout"
-        android:layout_below="@+id/toolbar"
-        android:layout_marginLeft="@dimen/margin16dp"
-        android:layout_marginTop="@dimen/margin16dp"
-        android:layout_marginRight="@dimen/margin16dp"
-        android:background="@null"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
-        <LinearLayout
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_above="@id/container"
+            android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
-            android:background="@null"
-            android:baselineAligned="false"
-            android:orientation="horizontal">
+            android:layout_marginStart="@dimen/margin8dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp">
 
-            <LinearLayout
-                android:id="@+id/buttonContainer"
+            <RelativeLayout
+                android:id="@+id/rel"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin16dp"
-                android:layout_marginTop="@dimen/margin4dp"
-                android:layout_marginEnd="@dimen/margin16dp"
-                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_above="@id/adLayout"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="@dimen/margin8dp"
+                android:layout_marginTop="@dimen/margin8dp"
+                android:layout_marginEnd="@dimen/margin8dp"
+                android:layout_marginBottom="@dimen/margin8dp"
                 android:background="@null"
                 android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/buttonTrip"
+                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/trip"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:background="@null"
+                    android:baselineAligned="false"
+                    android:orientation="horizontal">
 
-                <Button
-                    android:id="@+id/buttonTransport"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/transport"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/buttonContainer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/margin4dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/buttonHotel"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/hotel"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/buttonTrip"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/trip"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonCafe"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/cafe"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/buttonTransport"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/transport"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonExcursion"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/excursion"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/buttonHotel"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/hotel"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-            </LinearLayout>
+                        <Button
+                            android:id="@+id/buttonCafe"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/cafe"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-            <LinearLayout
-                android:id="@+id/buttonContainer2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/margin16dp"
-                android:layout_marginTop="@dimen/margin4dp"
-                android:layout_marginEnd="@dimen/margin16dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:orientation="vertical">
+                        <Button
+                            android:id="@+id/buttonExcursion"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/excursion"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonBuy"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/buy"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                    </LinearLayout>
 
-                <Button
-                    android:id="@+id/buttonBank"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/bank"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                    <LinearLayout
+                        android:id="@+id/buttonContainer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/margin4dp"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:orientation="vertical">
 
-                <Button
-                    android:id="@+id/buttonHealth"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/health"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/buttonBuy"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/buy"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonRadio"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/radio"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
+                        <Button
+                            android:id="@+id/buttonBank"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/bank"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-                <Button
-                    android:id="@+id/buttonCommon"
-                    android:layout_width="match_parent"
-                    android:layout_height="@dimen/buttonHeight_sw720dp"
-                    android:layout_marginBottom="@dimen/margin8dp"
-                    android:background="@color/colorPurple700"
-                    android:onClick="onClick"
-                    android:text="@string/common"
-                    android:textSize="@dimen/textSize18sp"
-                    android:textStyle="bold" />
-            </LinearLayout>
+                        <Button
+                            android:id="@+id/buttonHealth"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/health"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-        </LinearLayout>
+                        <Button
+                            android:id="@+id/buttonRadio"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/radio"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
 
-    </RelativeLayout>
+                        <Button
+                            android:id="@+id/buttonCommon"
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/buttonHeight_sw720dp"
+                            android:layout_marginBottom="@dimen/margin4dp"
+                            android:background="@drawable/gradient"
+                            android:onClick="onClick"
+                            android:text="@string/common"
+                            android:textSize="@dimen/textSize18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
-    <RelativeLayout
-        android:id="@+id/adLayout"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/leaderboardBannerHeight"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="@dimen/margin16dp"
-        android:layout_marginTop="@dimen/margin4dp"
-        android:layout_marginRight="@dimen/margin16dp"
-        android:layout_marginBottom="@dimen/margin4dp"
-        android:orientation="vertical">
+                </LinearLayout>
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+            </RelativeLayout>
+        </android.support.design.widget.CoordinatorLayout>
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:background="@null"
-            app:adSize="LEADERBOARD"
-            app:adUnitId="@string/AdID" />
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin8dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:background="@null">
+
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginStart="@dimen/margin8dp"
+                android:layout_marginTop="@dimen/margin8dp"
+                android:layout_marginEnd="@dimen/margin8dp"
+                android:layout_marginBottom="@dimen/margin8dp"
+                android:background="@null"
+                app:adSize="LEADERBOARD"
+                app:adUnitId="@string/AdID" />
+
+        </android.support.design.widget.CoordinatorLayout>
+
     </RelativeLayout>
+
 </RelativeLayout>

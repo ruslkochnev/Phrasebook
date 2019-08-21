@@ -47,16 +47,17 @@ public class MainActivity extends AppCompatActivity {
 
             // получаем наши `SharedPreferences`
             PreferencesManager prefManager = new PreferencesManager(this);
-            // проверяем нашу запись в файле настроек. Если реклама не отключена, то
-            // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
-            // а также проверяем подключение к сети Internet простеньким способом
-            // true - enabled  | false - disabled
-            boolean adsState = prefManager.getAdsStatus();
-            if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
-                Ads.showBanner(this, adsState);
-            } else {
-                Ads.showBanner(this, adsState);
-            }
+        // проверяем нашу запись в файле настроек. Если реклама не отключена, то
+        // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
+        // а также проверяем подключение к сети Internet простеньким способом
+        // true - enabled  | false - disabled
+        boolean adsState = prefManager.getAdsStatus();
+        if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
+            Ads.showBanner(this, true);
+        } else {
+            Ads.showBanner(this, false);
+
+        }
     }
 
 

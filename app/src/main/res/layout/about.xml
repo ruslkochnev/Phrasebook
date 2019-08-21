@@ -5,92 +5,135 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.luc1fer.phrasebook.about"
-    android:background="@color/colorWhite"
-    >
+    tools:context=".about"
+    style="?android:attr/buttonBarStyle">
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar4"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPurple700"
+        android:background="@drawable/gradient"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="@string/app_name"
         app:titleTextColor="@color/colorWhite" />
 
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="32dp"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/imageView2"
-            android:layout_width="match_parent"
-            android:layout_height="137dp"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:contentDescription="@string/author"
-            app:srcCompat="@drawable/cop" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="133dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="32dp"
-            android:layout_marginRight="32dp"
-            android:gravity="bottom"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/imageButton2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:contentDescription="@string/gmail"
-                android:onClick="onLinkClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/gmailcopy" />
-
-            <ImageButton
-                android:id="@+id/imageButton"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="16dp"
-                android:layout_weight="1"
-                android:background="@null"
-                android:contentDescription="@string/link"
-                android:onClick="onImageButtonClick"
-                android:scaleType="fitCenter"
-                app:srcCompat="@drawable/vk" />
-        </LinearLayout>
-    </LinearLayout>
-
     <RelativeLayout
-        android:id="@+id/adLayout"
+        android:id="@+id/parent"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/leaderboardBannerHeight"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
+        android:layout_height="match_parent"
+        android:layout_below="@id/toolbar">
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView"
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/coordinator"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@null"
-            app:adSize="BANNER"
-            app:adUnitId="@string/AdID" />
+            android:layout_height="wrap_content"
+            android:layout_above="@id/container"
+            android:layout_alignParentTop="true"
+            android:layout_centerInParent="true"
+            android:layout_marginStart="@dimen/margin8dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp">
+
+            <RelativeLayout
+                android:id="@+id/rel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/adLayout"
+                android:layout_gravity="center"
+                android:layout_marginStart="@dimen/margin8dp"
+                android:layout_marginTop="@dimen/margin8dp"
+                android:layout_marginEnd="@dimen/margin8dp"
+                android:layout_marginBottom="@dimen/margin8dp"
+                android:background="@null"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/buttonHeight_sw600dp"
+                    android:layout_below="@id/buttonContainer"
+                    android:contentDescription="@string/toggle"
+                    app:srcCompat="@drawable/ad" />
+
+                <fragment
+                    android:id="@+id/fragment"
+                    android:name="com.luc1fer.phrasebook.SettingsFrag"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView3"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="179dp"
+                    tools:layout="@layout/frag_sett_screen" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:contentDescription="@string/toggle"
+                    app:srcCompat="@drawable/feedback" />
+
+                <LinearLayout
+                    android:id="@+id/buttonContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/imageView"
+                    android:layout_centerInParent="true"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnGmail"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin4dp"
+                        android:background="@drawable/gmail"
+                        android:onClick="onLinkClick"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                    <Button
+                        android:id="@+id/btnVk"
+                        style="?android:attr/buttonBarButtonStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/margin4dp"
+                        android:background="@drawable/vk"
+                        android:onClick="onImageButtonClick"
+                        android:textSize="@dimen/textSize18sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+            </RelativeLayout>
+
+        </android.support.design.widget.CoordinatorLayout>
+
+        <android.support.design.widget.CoordinatorLayout
+            android:id="@+id/container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:layout_alignParentBottom="true"
+            android:layout_marginStart="@dimen/margin8dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:background="@null">
+
+            <com.google.android.gms.ads.AdView
+                android:id="@+id/adView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@null"
+                app:adSize="BANNER"
+                app:adUnitId="@string/AdID" />
+
+        </android.support.design.widget.CoordinatorLayout>
 
     </RelativeLayout>
+
 
 </RelativeLayout>

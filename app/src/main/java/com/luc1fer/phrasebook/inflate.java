@@ -35,10 +35,18 @@ public class inflate extends AppCompatActivity {
         j = getIntent().getExtras().getInt("j");
         title = getIntent().getExtras().getString("title");
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
+        PreferencesManager prefManager = new PreferencesManager(this);
+        // проверяем нашу запись в файле настроек. Если реклама не отключена, то
+        // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
+        // а также проверяем подключение к сети Internet простеньким способом
+        // true - enabled  | false - disabled
+        boolean adsState = prefManager.getAdsStatus();
+        if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
+            Ads.showBanner(this, true);
+        } else {
+            Ads.showBanner(this, false);
 
-        mAdView.loadAd(adRequest);
+        }
 
 
         mDBhelper = new PhraseDBHelper(this);

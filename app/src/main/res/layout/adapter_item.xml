@@ -12,16 +12,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginStart="@dimen/margin16dp"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorOrange" />
 
     <TextView
         android:id="@+id/textViewEnglish"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        android:layout_marginStart="@dimen/margin16dp"
         android:textAppearance="?android:attr/textAppearanceMedium"
-        android:textColor="@color/colorAccent" />
+        android:textColor="@color/colorDarkRed" />
 
     <Space
         android:layout_width="match_parent"

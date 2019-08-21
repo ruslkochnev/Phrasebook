@@ -8,10 +8,11 @@
 
     <ToggleButton
         android:id="@+id/tbAdsState"
-        android:layout_width="178dp"
+        android:layout_width="50dp"
         android:layout_height="wrap_content"
-        android:text="@string/toggle"
+        android:checked="true"
 
+        android:text="@string/toggle"
         tools:layout_editor_absoluteX="87dp"
         tools:layout_editor_absoluteY="66dp" />
 

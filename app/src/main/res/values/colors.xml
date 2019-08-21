@@ -7,4 +7,7 @@
     <color name="colorPurple700">#7B1FA2</color>
     <color name="colorBlack">#000000</color>
     <color name="colorGray700">#616161</color>
+    <color name="colorOrange">#FF7300</color>
+    <color name="colorDarkRed">#B91F00</color>
+    <color name="colorDarkOrange">#DD2C00</color>
 </resources>

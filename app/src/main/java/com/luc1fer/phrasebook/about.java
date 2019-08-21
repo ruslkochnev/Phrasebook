@@ -5,17 +5,16 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import com.google.android.gms.ads.*;
+
 public class about extends AppCompatActivity {
     String title;
-    private AdView mAdView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.about);
         title = getIntent().getExtras().getString("title");
-        Toolbar toolbar4 = findViewById(R.id.toolbar4);
+        Toolbar toolbar4 = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar4);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -27,13 +26,18 @@ public class about extends AppCompatActivity {
                 startActivity(intent3);
             }
         });
-/*
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
+        PreferencesManager prefManager = new PreferencesManager(this);
+        // проверяем нашу запись в файле настроек. Если реклама не отключена, то
+        // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
+        // а также проверяем подключение к сети Internet простеньким способом
+        // true - enabled  | false - disabled
+        boolean adsState = prefManager.getAdsStatus();
+        if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
+            Ads.showBanner(this, true);
+        } else {
+            Ads.showBanner(this, false);
 
-        mAdView.loadAd(adRequest);
-
-*/
+        }
 
     }
     public void onImageButtonClick(View view) {

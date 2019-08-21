@@ -3,14 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorWhite"
     >
 
     <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar3"
+        android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorPurple700"
+        android:background="@drawable/gradient"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:title="@string/app_name"
@@ -20,7 +19,6 @@
         android:id="@+id/userFilter"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/toolbar3"
         android:layout_marginStart="@dimen/margin16dp"
         android:layout_marginTop="@dimen/margin8dp"
         android:layout_marginEnd="@dimen/margin8dp"
@@ -30,33 +28,51 @@
         android:importantForAutofill="no"
         android:inputType="textPersonName|text"
         android:textColor="@color/colorAccent"
-        android:textColorHint="@color/colorGray700" />
+        android:textColorHint="@color/colorGray700"
+        android:layout_below="@id/toolbar"/>
 
-    <LinearLayout
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/coordinator"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/adLayout"
-        android:layout_below="@+id/userFilter"
-        android:layout_marginStart="@dimen/margin16dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/container"
+        android:layout_below="@id/userFilter"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="@dimen/margin8dp"
+        android:layout_marginTop="@dimen/margin8dp"
+        android:layout_marginEnd="@dimen/margin8dp"
+        android:layout_marginBottom="@dimen/margin8dp">
+
+
+        <LinearLayout
+            android:id="@+id/linear"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="@dimen/margin16dp"
+            android:layout_marginTop="@dimen/margin8dp"
+            android:layout_marginEnd="@dimen/margin8dp"
+            android:layout_marginBottom="@dimen/margin8dp"
+            android:orientation="vertical">
+
+            <ListView
+                android:id="@+id/userList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="@dimen/margin8dp"
         android:layout_marginTop="@dimen/margin8dp"
         android:layout_marginEnd="@dimen/margin8dp"
         android:layout_marginBottom="@dimen/margin8dp"
-        android:orientation="vertical">
-
-        <ListView
-            android:id="@+id/userList"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:id="@+id/adLayout"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/leaderboardBannerHeight"
-        android:layout_alignParentBottom="true"
-        android:orientation="vertical">
-
+        android:background="@null">
         <com.google.android.gms.ads.AdView
             android:id="@+id/adView"
             android:layout_width="match_parent"
@@ -64,7 +80,7 @@
             android:background="@null"
             app:adSize="BANNER"
             app:adUnitId="@string/AdID" />
-
-    </RelativeLayout>
+    </android.support.design.widget.CoordinatorLayout>
 
 </RelativeLayout>
+

@@ -12,8 +12,10 @@ import android.support.v7.app.AlertDialog;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
 import android.widget.Toast;
-import android.widget.ToggleButton;
+
 
 import com.anjlab.android.iab.v3.BillingProcessor;
 import com.anjlab.android.iab.v3.TransactionDetails;
@@ -26,7 +28,7 @@ public class SettingsFrag extends Fragment implements BillingProcessor.IBillingH
 
     private PreferencesManager prefManager; // класс, который работает с SharedPreferences. Я для себя решил вынести всю логику отдельно
     private Resources resources;            // для работы с ресурсами. Раз получаем и постоянно обращаемся
-    private ToggleButton tbAdsState;        // кнопка
+    private Switch tbAdsState;        // кнопка
 
     Context mContext;
     @Override
@@ -54,10 +56,10 @@ public class SettingsFrag extends Fragment implements BillingProcessor.IBillingH
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         // создаем `View` экрана настроек
-        View settView = inflater.inflate(R.layout.frag_sett_screen, container, false);
+        final View settView = inflater.inflate(R.layout.frag_sett_screen, container, false);
 
         // инициализация других полей
-        tbAdsState = (ToggleButton) settView.findViewById(R.id.tbAdsState);
+        tbAdsState = settView.findViewById(R.id.tbAdsState);
         // инициализация других полей
 
         // вешаем слушателя нажатий по кнопке `ToggleButton`
@@ -80,6 +82,8 @@ public class SettingsFrag extends Fragment implements BillingProcessor.IBillingH
 
             }
         });
+        if (!adsStatus)
+            tbAdsState.setVisibility(View.INVISIBLE);
 
         return settView;
     }

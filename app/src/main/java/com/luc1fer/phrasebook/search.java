@@ -18,7 +18,6 @@ import android.widget.FilterQueryProvider;
 import android.widget.ListView;
 
 
-import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
 import java.io.IOException;
@@ -44,10 +43,18 @@ public class search extends AppCompatActivity {
         setContentView(R.layout.search);
         title = getIntent().getExtras().getString("title");
 
-        mAdView = findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().addTestDevice("4DEDDDCDB26C87FB2579CAE68F90D18A").build();
-        /*AdRequest adRequest = new AdRequest.Builder().build();*/
-        mAdView.loadAd(adRequest);
+        PreferencesManager prefManager = new PreferencesManager(this);
+        // проверяем нашу запись в файле настроек. Если реклама не отключена, то
+        // у нас будет true записано, то есть состояние ВКЛЮЧЕНО
+        // а также проверяем подключение к сети Internet простеньким способом
+        // true - enabled  | false - disabled
+        boolean adsState = prefManager.getAdsStatus();
+        if (adsState && CheckURLConnection.isNetworkAvailable(this)) {
+            Ads.showBanner(this, true);
+        } else {
+            Ads.showBanner(this, false);
+
+        }
 
 
         mDBhelper = new PhraseDBHelper(this);
@@ -112,7 +119,7 @@ public class search extends AppCompatActivity {
         catch (SQLException ex){}
 
 
-        Toolbar toolbar3 = findViewById(R.id.toolbar3);
+        Toolbar toolbar3 = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar3);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

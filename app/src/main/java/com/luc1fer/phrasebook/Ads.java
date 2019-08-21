@@ -67,6 +67,7 @@ public class Ads {
             });
         } else {
             adsContainer.removeView(mAdView);
+
         }
     }
 
